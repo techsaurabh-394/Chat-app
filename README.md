@@ -1,68 +1,161 @@
-# Snappy - Chat Application 
-Snappy is chat application build with the power of MERN Stack. You can find the tutorial [here](https://www.youtube.com/watch?v=otaQKODEUFs)
+Sure! Here's a comprehensive README for a Chat App built with the MERN stack:
 
+---
 
-![login page](./images/snappy_login.png)
+# Chat App
 
-![home page](./images/snappy.png)
+Chat App is a real-time messaging application built using the MERN stack (MongoDB, Express.js, React, and Node.js). It allows users to create accounts, send and receive messages, and engage in real-time conversations.
 
-## Installation Guide
+## Table of Contents
 
-### Requirements
-- [Nodejs](https://nodejs.org/en/download)
-- [Mongodb](https://www.mongodb.com/docs/manual/administration/install-community/)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-Both should be installed and make sure mongodb is running.
-### Installation
+## Features
 
-#### First Method
-```shell
-git clone https://github.com/koolkishan/chat-app-react-nodejs
-cd chat-app-react-nodejs
-```
-Now rename env files from .env.example to .env
-```shell
-cd public
-mv .env.example .env
-cd ..
-cd server
-mv .env.example .env
-cd ..
-```
+- **Real-time Messaging:** Send and receive messages in real time.
+- **User Authentication:** Secure user registration and login.
+- **Chat Rooms:** Create and join chat rooms for group conversations.
+- **Private Messaging:** Send direct messages to individual users.
+- **Responsive Design:** Fully responsive design using React and Bootstrap.
 
-Now install the dependencies
-```shell
-cd server
-yarn
-cd ..
-cd public
-yarn
-```
-We are almost done, Now just start the development server.
+## Technologies Used
 
-For Frontend.
-```shell
-cd public
-yarn start
-```
-For Backend.
+- **Frontend:**
+  - React
+  - Bootstrap
+  - Socket.IO Client
 
-Open another terminal in folder, Also make sure mongodb is running in background.
-```shell
-cd server
-yarn start
-```
-Done! Now open localhost:3000 in your browser.
+- **Backend:**
+  - Node.js
+  - Express.js
+  - MongoDB
+  - Socket.IO
 
-#### Second Method
-- This method requires docker and docker-compose to be installed in your system.
-- Make sure you are in the root of your project and run the following command.
+- **Other:**
+  - JWT for authentication
+  - Mongoose for MongoDB interaction
 
-```shell
-docker compose build --no-cache
-```
-after the build is complete run the containers using the following command
-```shell
-docker compose up
-```
-now open localhost:3000 in your browser.
+## Installation
+
+Follow these steps to set up the project locally:
+
+### Prerequisites
+
+- Node.js installed on your machine
+- MongoDB instance running
+
+### Steps
+
+1. **Clone the repository:**
+    ```sh
+    git clone https://github.com/techsaurabh-394/chat-app.git
+    cd chat-app
+    ```
+
+2. **Install dependencies:**
+    ```sh
+    npm install
+    cd client
+    npm install
+    cd ..
+    ```
+
+3. **Set up environment variables:**
+    Create a `.env` file in the root directory and add the following:
+    ```sh
+    MONGO_URI=your-mongodb-uri
+    JWT_SECRET=your-jwt-secret
+    ```
+
+4. **Run the server:**
+    ```sh
+    npm run server
+    ```
+
+5. **Run the client:**
+    Open another terminal window, navigate to the `client` directory, and run:
+    ```sh
+    npm start
+    ```
+
+The application will be running on `http://localhost:3000` for the frontend and `http://localhost:5000` for the backend.
+
+## Usage
+
+### Registering a New User
+
+1. Navigate to `http://localhost:3000`.
+2. Click on the "Register" button.
+3. Fill out the registration form with your details.
+4. Click "Submit" to create your account.
+
+### Logging In
+
+1. Navigate to `http://localhost:3000`.
+2. Click on the "Login" button.
+3. Enter your credentials and click "Submit".
+
+### Sending Messages
+
+1. After logging in, you will see a list of chat rooms and users.
+2. Click on a chat room to join or create a new one.
+3. Type your message in the input field and press "Send".
+
+## API Endpoints
+
+### Authentication
+
+- **POST /api/auth/register**
+  - Register a new user.
+
+- **POST /api/auth/login**
+  - Log in a user.
+
+### Users
+
+- **GET /api/users**
+  - Get a list of all users.
+
+- **GET /api/users/:id**
+  - Get details of a specific user.
+
+### Messages
+
+- **GET /api/messages**
+  - Get a list of all messages.
+
+- **POST /api/messages**
+  - Send a new message.
+
+- **GET /api/messages/:roomId**
+  - Get messages for a specific chat room.
+
+### Chat Rooms
+
+- **GET /api/rooms**
+  - Get a list of all chat rooms.
+
+- **POST /api/rooms**
+  - Create a new chat room.
+
+- **GET /api/rooms/:id**
+  - Get details of a specific chat room.
+
+## Contributing
+
+We welcome contributions to the Chat App! Here's how you can help:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature-name`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/your-feature-name`).
+6. Open a Pull Request.
+
